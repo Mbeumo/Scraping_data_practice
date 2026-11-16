@@ -1,4 +1,7 @@
-def request_github_trending(url:str)->str:
+import requests
+
+def request_github_trending(url):
+    return requests.get(url)
 
 
 def extract(page):
