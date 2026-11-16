@@ -1,11 +1,12 @@
 import requests
-
+from bs4 import BeautifulSoup
+import csv
 def request_github_trending(url):
     return requests.get(url)
 
 
 def extract(page):
-    soup=BeautifullSoup(page.content,'html.parser')
+    soup=BeautifulSoup(page.content,'html.parser')
     rows=soup.find_all(class_='Box-row')
     return rows
 
@@ -23,8 +24,6 @@ def transform(html_repos):
             "nbr_stars": stars,
         })
     return repos[:25]
-
-
 
 def format(repositories_data:[str]):
     csv_file =','.join(repositories_data[0].keys())+ '\n'
