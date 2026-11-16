@@ -15,14 +15,19 @@ Download the dependency BeautifulSoup that will help you extract using command:
 ```md 
 pip install BeautifulSoup
 ```
-
-## Usage
-Import the functions, request the page, then extract, transform and format it:
 ```python
 get_page = request_github_trending(url)
 extracted_rows = extract(get_page)
 cleaned_rows = transform(extracted_rows)
 csv_file = format(cleaned_rows)
+```
+
+## Usage
+Import the functions, request the page, then extract, transform and format it:
+```python
+from my_first_scraper import *
+page = request_github_trending(url)
+csv_text = format(transform(extract(page)))
 ```
 
 ### The Core Team

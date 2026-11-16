@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+
 def request_github_trending(url):
     return requests.get(url)
 
