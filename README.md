@@ -1,25 +1,28 @@
 # Welcome to My First Scraper
 ***
-
+- I [Gertrude Nelly Tatchou Yopa] worked on part 0 (request) and part 2 (transform). I wrote a function to request the page, and a function that turns each repository row into a dictionary with the developer, the repository name and the number of stars.
 - I had to work on part 1 creating a function to extract from request result
 - Ihad to do the last part into formating the final result of scrape data to conform to desired output with columns Developer,Repository Name,Number of Stars.
 
 ## Task
-TODO - What is the problem? And where is the challenge?
+Scrape the page of the top 25 trending GitHub repositories and return the data as a CSV string. The challenge is to find the useful data inside the HTML, and to clean it so the CSV has the right columns.
 
 ## Description
-TODO - How have you solved the problem?
+The script has four functions. request_github_trending downloads the page with the requests library. extract finds every repository row with BeautifulSoup. transform reads the developer, the repository name and the number of stars of each row and returns a list of dictionaries. format turns that list into a CSV string with one line per repository.
 
 ## Installation
-TODO - How to install your project? npm install? make? make re?
+Import the functions, request the page, then extract, transform and format it:
 
 ## Usage
-TODO - How does it work?
 ```
-./my_project argument1 argument2
+from my_first_scraper import *
+page = request_github_trending(url)
+csv_text = format(transform(extract(page)))
 ```
 
 ### The Core Team
+Philippe Briand Mbeumo Donfang
+Gertrude Nelly Tatchou Yopa 
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
