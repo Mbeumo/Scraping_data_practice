@@ -1,8 +1,8 @@
 # Welcome to My First Scraper
 ***
 - I [Gertrude Nelly Tatchou Yopa] worked on part 0 (request) and part 2 (transform). I wrote a function to request the page, and a function that turns each repository row into a dictionary with the developer, the repository name and the number of stars.
-- I had to work on part 1 creating a function to extract from request result
-- Ihad to do the last part into formating the final result of scrape data to conform to desired output with columns Developer,Repository Name,Number of Stars.
+- I [Mbeumo Donfang Philippe Briand] worked on part 1 creating a function to extract from request result
+- I did the last part into formating the final result of scrape data to conform to desired output with columns Developer,Repository Name,Number of Stars.
 
 ## Task
 Scrape the page of the top 25 trending GitHub repositories and return the data as a CSV string. The challenge is to find the useful data inside the HTML, and to clean it so the CSV has the right columns.
@@ -11,13 +11,18 @@ Scrape the page of the top 25 trending GitHub repositories and return the data a
 The script has four functions. request_github_trending downloads the page with the requests library. extract finds every repository row with BeautifulSoup. transform reads the developer, the repository name and the number of stars of each row and returns a list of dictionaries. format turns that list into a CSV string with one line per repository.
 
 ## Installation
-Import the functions, request the page, then extract, transform and format it:
+Download the dependency BeautifulSoup that will help you extract using command:
+```md 
+pip install BeautifulSoup
+```
 
 ## Usage
-```
-from my_first_scraper import *
-page = request_github_trending(url)
-csv_text = format(transform(extract(page)))
+Import the functions, request the page, then extract, transform and format it:
+```python
+get_page = request_github_trending(url)
+extracted_rows = extract(get_page)
+cleaned_rows = transform(extracted_rows)
+csv_file = format(cleaned_rows)
 ```
 
 ### The Core Team
