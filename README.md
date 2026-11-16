@@ -1,6 +1,9 @@
 # Welcome to My First Scraper
 ***
 
+- I had to work on part 1 creating a function to extract from request result
+- Ihad to do the last part into formating the final result of scrape data to conform to desired output with columns Developer,Repository Name,Number of Stars.
+
 ## Task
 TODO - What is the problem? And where is the challenge?
 
